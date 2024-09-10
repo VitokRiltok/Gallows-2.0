@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10",]
+        python-version: ["3.8", "3.9", "3.10"]
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -19,9 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
 
-        - name: Check codestyle     
+        - name: Run tests      
         run: |
-        flake8 src
+        pytest
     
         
   
